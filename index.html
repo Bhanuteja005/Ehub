@@ -20,6 +20,11 @@ rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
 <style>
     @import  url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
 
@@ -944,6 +949,7 @@ rel="stylesheet">
          <li><a href="/team" class="newShow" style="font-size: 90%;">Team</a></li>
          <li><a href="/about" class="newShow" style="font-size: 90%;">About</a></li>
          <li><a href="/contact" class="newShow" style="font-size: 90%;">Contact</a></li>
+         <li><a href="" class="btn btn-primary getStartBtn mt-2 pt-3" style="height: 46px;">Login</a></li>
                     </ul>
  </nav>
  <script>
@@ -1309,132 +1315,732 @@ width: 100%;
         background-image: radial-gradient(currentColor, transparent 70%);
     }
 </style>
+<style>
+     :root {
+            --h2s-primary-gradient: linear-gradient(90deg, rgba(19, 75, 187, 1) 0%, rgba(76, 23, 107, 1) 100%);
+            --h2s-gradient-blue: #2F36A1;
+            --h2s-primary: #F2C034;
+            --h2s-primary-light: #F2C0347c;
+            --h2s-primary-hover:
+                #e0af28;
+            --h2s-gray: #5a5a5a;
+            --h2s-light-bg: #F5F6FA;
+            --h2s-dark: #121212;
+            --h2s-white: #ffffff;
+            --h2s-footer-color:
+                #F2F2F2;
+        }
 
+        * {
+            font-family: 'Poppins', sans-serif;
+            font-display: swap;
+            scroll-behavior: smooth;
+        }
 
-<!--Slick Slider-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
-    integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
-    crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
-    integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
-    crossorigin="anonymous" />
+        .splide__list .splide__slide {
+            display:
+                -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
 
-<div>
-    <h1 class="text-center text-light" style="font-family: 'Roboto Condensed';"><strong>INITIATIVES</strong></h1>
-    <hr style="border: 1px solid #198CE6; opacity: 1; color: #198CE6; width: 10%; margin: auto;" />
-</div>
-<div class="row mt-3 d-flex justify-content-center">
-    <div class="col-md-10 text-center mt-3 mb-5 px-4 py-3" data-aos="fade-up" style="font-size:16px;color:#fffA !important;">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem non porro assumenda corrupti? Fuga veritatis quasi, est eius ab cum, asperiores velit perspiciatis amet aperiam, sapiente vero quos suscipit facilis?
+        .newCard {
+            width: 290px !important;
+            /* height: fit-content !important; */
+            margin-bottom: 10px;
+        }
+
+        .newCard .last-date {
+            font-size: 10px;
+        }
+
+        .newCard h5 {
+            font-weight: 600;
+        }
+
+        .newCard .hack-description {
+            font-size: 10px;
+        }
+
+        .newCard .reg-fee {
+            font-size: 10px;
+        }
+
+        .newCard .hack-type {
+            font-size: 10px;
+        }
+
+        .newCard .btn-gradient {
+            font-size: 12px;
+        }
+
+        .btn-gradient {
+            background:
+                var(--h2s-primary-gradient);
+            border-radius: 12px;
+            -webkit-border-radius: 12px;
+            -moz-border-radius:
+                12px;
+            -ms-border-radius: 12px;
+            -o-border-radius: 12px;
+            -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            border: none;
+            color: var(--h2s-white);
+            padding: 0.75rem 1.25rem;
+            margin: 1rem 1rem 1rem 0rem;
+        }
+
+        .btn-gradient:hover {
+            color: var(--h2s-white);
+        }
+
+        .btn-gradient-outline {
+            background: transparent;
+            border-radius: 12px;
+            -webkit-border-radius: 12px;
+            -moz-border-radius:
+                12px;
+            -ms-border-radius: 12px;
+            -o-border-radius: 12px;
+            -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            border: 1px solid var(--h2s-gradient-blue);
+            color:
+                var(--h2s-gradient-blue);
+            padding: 0.75rem 1.25rem;
+        }
+
+        .btn-gradient-outline:hover {
+            background:
+                var(--h2s-primary-gradient);
+            color: var(--h2s-white);
+        }
+</style>
+<div class="container-fluid py-4 position-relative">
+    <div id="ongoin-initiatives" class="link"></div>
+    <div class="d-flex justify-content-center text-center mb-3 featured_event_hacks">
+        <h2>Featured Innovation Challenges and Hackathons </h2>
     </div>
-    <div class="initiativescontainer">
-                            <a href="" class="initiativediv  primaryblue">
-                <div class=" iniiconbox">
-                  <img src="assets/rings/3D ICONS-01.png" style="position:relative;transition:0.5s ease; width:100%" alt="">
-                    <div class="shadowdiv">
+
+    <div class="d-none d-md-block">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                            <div class="swiper-slide newCard ">
+                                <a class="text-link" href="sample.html" target="_blank">
+                                    <div class="card hack-event-card">
+                                        <img class="card-img-top border-bottom" src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2024-01-06T10%3A16%3A59.960Z-Scale_91%20home%20page.png"
+                                            alt="Scale +91 Hackathon | FFI 2024">
+                                        <div class="card-body">
+                                            <h6>
+                                                Scale +91 Hackathon | FFI 2024
+                                            </h6>
+                                            <p class="hack-description">
+                                                Embark on a transformative journey with us at Scale +91, an exhilarating hackathon presented by Constellar under the umbrella of FinTech Festival India 2024, and powered by Hack2skill as the Innovation Partner.
+                                            </p>
+                                            <p class="last-date">
+                                                Submission Deadline:
+                                                    Sun Jan 28 2024
+                                            </p>
+                                            <div class="clearfix">
+                                                <div class="float-left">
+                                                    <p class="reg-fee">
+                                                        <span>Fee: </span>
+                                                        Free
+                                                    </p>
+                                                </div>
+                                                <div class="float-right">
+                                                    <p class="hack-type">
+                                                        Mode : <span class="text-success">
+                                                            Hybrid
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <a name="" id="" class="btn btn-gradient w-100"
+                                                href="sample.html" role="button"
+                                                target="_blank" rel="noreferrer">
+                                                Register Now
+                                            </a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide newCard ">
+                                <a class="text-link" href="" target="_blank">
+                                    <div class="card hack-event-card">
+                                        <img class="card-img-top border-bottom" src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-12-04T05%3A51%3A30.060Z-bfb_home_page.png"
+                                            alt="Build for Bharat - sponsored by ONDC and Google Cloud ">
+                                        <div class="card-body">
+                                            <h6>
+                                                Build for Bharat - sponsored by ONDC and Google Cloud 
+                                            </h6>
+                                            <p class="hack-description">
+                                                At Build for Bharat, we extend a warm invitation to students, professional developers, startups, and tech enthusiasts across the nation. This thrilling initiative is designed to be an immersive experience, aiming to bring together diverse talents with a shared passion for technology and a commitment to addressing real-world challenges in the e-commerce landscape.
+                                            </p>
+                                            <p class="last-date">
+                                                Last date to register:
+                                                    Wed Jan 31 2024
+                                            </p>
+                                            <div class="clearfix">
+                                                <div class="float-left">
+                                                    <p class="reg-fee">
+                                                        <span>Fee: </span>
+                                                        Free
+                                                    </p>
+                                                </div>
+                                                <div class="float-right">
+                                                    <p class="hack-type">
+                                                        Mode : <span class="text-success">
+                                                            Online
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <a name="" id="" class="btn btn-gradient w-100"
+                                                href="" role="button"
+                                                target="_blank" rel="noreferrer">
+                                                Register Now
+                                            </a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide newCard ">
+                                <a class="text-link" href="" target="_blank">
+                                    <div class="card hack-event-card">
+                                        <img class="card-img-top border-bottom" src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2024-01-17T13%3A09%3A05.823Z-homepage%20ksp%202.png"
+                                            alt="KSP Datathon 2024">
+                                        <div class="card-body">
+                                            <h6>
+                                                KSP Datathon 2024
+                                            </h6>
+                                            <p class="hack-description">
+                                                Just a few steps away from shaping a crime-free society at the Karnataka State Police Datathon 2024 – a stellar collaboration with Hack2skill! Unleash your coding brilliance, tackle real-world challenges, and join the coding revolution to build a safer, smarter future. The Hon&#39;ble Chief Minister inaugurates this grand event on January 16, 2024. It&#39;s not just a competition; it&#39;s a journey toward innovation for a more secure society. Don&#39;t miss the chance to leave a lasting impact and be part of this transformative initiative!
+                                            </p>
+                                            <p class="last-date">
+                                                Registration Ends on :
+                                                    Wed Feb 14 2024
+                                            </p>
+                                            <div class="clearfix">
+                                                <div class="float-left">
+                                                    <p class="reg-fee">
+                                                        <span>Fee: </span>
+                                                        Free
+                                                    </p>
+                                                </div>
+                                                <div class="float-right">
+                                                    <p class="hack-type">
+                                                        Mode : <span class="text-success">
+                                                            Offline
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <a name="" id="" class="btn btn-gradient w-100"
+                                                href="" role="button"
+                                                target="_blank" rel="noreferrer">
+                                                Register Now
+                                            </a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide newCard ">
+                                <a class="text-link" href=""
+                                    target="_blank">
+                                    <div class="card hack-event-card">
+                                        <img class="card-img-top border-bottom"
+                                            src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-12-09T07%3A27%3A53.444Z-home%20page%20%283%29.png"
+                                            alt="Reinventing Youth Communication Hackathon">
+                                        <div class="card-body">
+                                            <h6>
+                                                Reinventing Youth Communication Hackathon
+                                            </h6>
+                                            <p class="hack-description">
+                                                where innovation meets social impact!
+                                            </p>
+                                            <p class="last-date">
+                                                Idea Submissions Ends:
+                                                    Tue Jan 02 2024
+                                            </p>
+                                            <div class="clearfix">
+                                                <div class="float-left">
+                                                    <p class="reg-fee">
+                                                        <span>Fee: </span>
+                                                        Free
+                                                    </p>
+                                                </div>
+                                                <div class="float-right">
+                                                    <p class="hack-type">
+                                                        Mode : <span
+                                                            class="text-success">
+                                                            Offline
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            
+                                                <a name="" id=""
+                                                    class="btn btn-gradient w-100 reg-close-btn"
+                                                    href=""
+                                                    role="button"
+                                                    target="_blank"
+                                                    rel="noreferrer">
+                                                </a>
+                                            
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide newCard ">
+                                <a class="text-link" href="https://junior.sih.gov.in/"
+                                    target="_blank">
+                                    <div class="card hack-event-card">
+                                        <img class="card-img-top border-bottom"
+                                            src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-10-13T13%3A18%3A03.254Z-1000124912.jpg"
+                                            alt="Smart India Hackathon 2023 - Junior Edition">
+                                        <div class="card-body">
+                                            <h6>
+                                                Smart India Hackathon 2023 - Junior Edition
+                                            </h6>
+                                            <p class="hack-description">
+                                                Smart India Hackathon 2023 is a nationwide initiative launched by AICTE and MoE to provide students with a platform to solve some of the pressing problems we face in our daily lives.
+                                            </p>
+                                            <p class="last-date">
+                                                SPOC Registration due on:
+                                                    Sat Dec 30 2023
+                                            </p>
+                                            <div class="clearfix">
+                                                <div class="float-left">
+                                                    <p class="reg-fee">
+                                                        <span>Fee: </span>
+                                                        Free
+                                                    </p>
+                                                </div>
+                                                <div class="float-right">
+                                                    <p class="hack-type">
+                                                        Mode : <span
+                                                            class="text-success">
+                                                            Hybrid
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            
+                                                <a name="" id=""
+                                                    class="btn btn-gradient w-100 reg-close-btn"
+                                                    href="https://junior.sih.gov.in/"
+                                                    role="button"
+                                                    target="_blank"
+                                                    rel="noreferrer">
+                                                </a>
+                                            
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide newCard ">
+                                <a class="text-link" href=""
+                                    target="_blank">
+                                    <div class="card hack-event-card">
+                                        <img class="card-img-top border-bottom"
+                                            src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-12-02T09%3A52%3A14.649Z-home%20page%20%281%29.png"
+                                            alt="SIF Space Hackathon 2023">
+                                        <div class="card-body">
+                                            <h6>
+                                                SIF Space Hackathon 2023
+                                            </h6>
+                                            <p class="hack-description">
+                                                Don&#39;t miss the chance to be a part of this incredible journey into the universe
+                                            </p>
+                                            <p class="last-date">
+                                                Submissions End:
+                                                    Tue Dec 26 2023
+                                            </p>
+                                            <div class="clearfix">
+                                                <div class="float-left">
+                                                    <p class="reg-fee">
+                                                        <span>Fee: </span>
+                                                        Free
+                                                    </p>
+                                                </div>
+                                                <div class="float-right">
+                                                    <p class="hack-type">
+                                                        Mode : <span
+                                                            class="text-success">
+                                                            Hybrid
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            
+                                                <a name="" id=""
+                                                    class="btn btn-gradient w-100 reg-close-btn"
+                                                    href=""
+                                                    role="button"
+                                                    target="_blank"
+                                                    rel="noreferrer">
+                                                </a>
+                                            
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <div class="swiper-slide newCard ">
+                                <a class="text-link" href="https://hackathon.khanbank.com/?"
+                                    target="_blank">
+                                    <div class="card hack-event-card">
+                                        <img class="card-img-top border-bottom"
+                                            src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-10-26T09%3A47%3A48.195Z-Main%20Poster%20%281%29.png"
+                                            alt="KhanBank Hackathon 2023">
+                                        <div class="card-body">
+                                            <h6>
+                                                KhanBank Hackathon 2023
+                                            </h6>
+                                            <p class="hack-description">
+                                                For the first time, KHAN Bank is organizing the &#34;Hackathon 2023&#34; activity for the public in cooperation with international and domestic organizations. It will be organized in 3 stages within the framework of 4 topics.
+
+₮21&#39;000&#39;000 PRIZE FUND
+                                            </p>
+                                            <p class="last-date">
+                                                Hackathon Finale:
+                                                    Mon Nov 20 2023
+                                            </p>
+                                            <div class="clearfix">
+                                                <div class="float-left">
+                                                    <p class="reg-fee">
+                                                        <span>Fee: </span>
+                                                        Free
+                                                    </p>
+                                                </div>
+                                                <div class="float-right">
+                                                    <p class="hack-type">
+                                                        Mode : <span
+                                                            class="text-success">
+                                                            Hybrid
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            
+                                                <a name="" id=""
+                                                    class="btn btn-gradient w-100 reg-close-btn"
+                                                    href="https://hackathon.khanbank.com/?"
+                                                    role="button"
+                                                    target="_blank"
+                                                    rel="noreferrer">
+                                                </a>
+                                            
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide newCard ">
+                                <a class="text-link" href=""
+                                    target="_blank">
+                                    <div class="card hack-event-card">
+                                        <img class="card-img-top border-bottom"
+                                            src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-10-16T12%3A59%3A10.600Z-homepage%20creative%20intel.png"
+                                            alt="oneAPI GenAI Hackathon - An LLM Challenge">
+                                        <div class="card-body">
+                                            <h6>
+                                                oneAPI GenAI Hackathon - An LLM Challenge
+                                            </h6>
+                                            <p class="hack-description">
+                                                Intel® presents “oneAPI GenAI Hackathon - An LLM Challenge” which is a 30-hour offline coding challenge aimed at showcasing developers&#39; skills in crafting inventive solutions for societal betterment through diverse computing techniques. It emphasizes the use of Intel® oneAPI as the primary programming paradigm.
+                                            </p>
+                                            <p class="last-date">
+                                                Last date to register:
+                                                    Sun Nov 19 2023
+                                            </p>
+                                            <div class="clearfix">
+                                                <div class="float-left">
+                                                    <p class="reg-fee">
+                                                        <span>Fee: </span>
+                                                        Free
+                                                    </p>
+                                                </div>
+                                                <div class="float-right">
+                                                    <p class="hack-type">
+                                                        Mode : <span
+                                                            class="text-success">
+                                                            Offline
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            
+                                                <a name="" id=""
+                                                    class="btn btn-gradient w-100 reg-close-btn"
+                                                    href=""
+                                                    role="button"
+                                                    target="_blank"
+                                                    rel="noreferrer">
+                                                </a>
+                                            
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide newCard ">
+                                <a class="text-link" href=""
+                                    target="_blank">
+                                    <div class="card hack-event-card">
+                                        <img class="card-img-top border-bottom"
+                                            src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-10-16T13%3A31%3A31.448Z-homepage%20e2open.png"
+                                            alt="e2open Hackathon 2023">
+                                        <div class="card-body">
+                                            <h6>
+                                                e2open Hackathon 2023
+                                            </h6>
+                                            <p class="hack-description">
+                                                Exclusive for e2open India employees only | Invite to participate in the flagship internal hackathon! This 3-day in-office hackathon will be a thrilling journey of innovation, fun, and engagement.
+                                            </p>
+                                            <p class="last-date">
+                                                Last date to register:
+                                                    Sat Oct 28 2023
+                                            </p>
+                                            <div class="clearfix">
+                                                <div class="float-left">
+                                                    <p class="reg-fee">
+                                                        <span>Fee: </span>
+                                                        Free
+                                                    </p>
+                                                </div>
+                                                <div class="float-right">
+                                                    <p class="hack-type">
+                                                        Mode : <span
+                                                            class="text-success">
+                                                            In-Office
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            
+                                                <a name="" id=""
+                                                    class="btn btn-gradient w-100 reg-close-btn"
+                                                    href=""
+                                                    role="button"
+                                                    target="_blank"
+                                                    rel="noreferrer">
+                                                </a>
+                                            
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide newCard ">
+                                <a class="text-link" href=""
+                                    target="_blank">
+                                    <div class="card hack-event-card">
+                                        <img class="card-img-top border-bottom"
+                                            src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-10-16T13%3A31%3A31.448Z-homepage%20e2open.png"
+                                            alt="e2open Hackathon 2023">
+                                        <div class="card-body">
+                                            <h6>
+                                                e2open Hackathon 2023
+                                            </h6>
+                                            <p class="hack-description">
+                                                Exclusive for e2open India employees only | Invite to participate in the flagship internal hackathon! This 3-day in-office hackathon will be a thrilling journey of innovation, fun, and engagement.
+                                            </p>
+                                            <p class="last-date">
+                                                Last date to register:
+                                                    Sat Oct 28 2023
+                                            </p>
+                                            <div class="clearfix">
+                                                <div class="float-left">
+                                                    <p class="reg-fee">
+                                                        <span>Fee: </span>
+                                                        Free
+                                                    </p>
+                                                </div>
+                                                <div class="float-right">
+                                                    <p class="hack-type">
+                                                        Mode : <span
+                                                            class="text-success">
+                                                            In-Office
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            
+                                                <a name="" id=""
+                                                    class="btn btn-gradient w-100 reg-close-btn"
+                                                    href=""
+                                                    role="button"
+                                                    target="_blank"
+                                                    rel="noreferrer">
+                                                </a>
+                                            
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                    
+                        
+                    
+                        
+                            <div class="swiper-slide newCard ">
+                                <a class="text-link" href="https://hack2skill.com/hack/google-maps-platform-hackathon?utm_source=h2shome&amp;utm_medium=h2shome"
+                                    target="_blank">
+                                    <div class="card hack-event-card">
+                                        <img class="card-img-top border-bottom"
+                                            src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-09-01T06%3A02%3A12.179Z-homepage%20cwm.png"
+                                            alt="&lt;/Code&gt; with Maps sponsored by Google Maps Platform ">
+                                        <div class="card-body">
+                                            <h6>
+                                                &lt;/Code&gt; with Maps sponsored by Google Maps Platform 
+                                            </h6>
+                                            <p class="hack-description">
+                                                Google Maps Platform allows developers to create unique location-based experiences using our APIs &amp; SDKs. Now is your chance to build or expand an existing app to incorporate rich location experiences using the latest APIs and push the boundaries of what is possible with our platform.
+                                            </p>
+                                            <p class="last-date">
+                                                Last date to register:
+                                                    Sun Oct 15 2023
+                                            </p>
+                                            <div class="clearfix">
+                                                <div class="float-left">
+                                                    <p class="reg-fee">
+                                                        <span>Fee: </span>
+                                                        Free
+                                                    </p>
+                                                </div>
+                                                <div class="float-right">
+                                                    <p class="hack-type">
+                                                        Mode : <span
+                                                            class="text-success">
+                                                            Online
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            
+                                                <a name="" id=""
+                                                    class="btn btn-gradient w-100 reg-close-btn"
+                                                    href=""
+                                                    role="button"
+                                                    target="_blank"
+                                                    rel="noreferrer">
+                                                </a>
+                                            
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                    
+                        
+                    
+                        
+                            <div class="swiper-slide newCard ">
+                                <a class="text-link" href=""
+                                    target="_blank">
+                                    <div class="card hack-event-card">
+                                        <img class="card-img-top border-bottom"
+                                            src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-05-02T14%3A50%3A55.867Z-HOEMPAGE%20NASA-min.png"
+                                            alt="NASA SPACE APPS NOIDA 2023">
+                                        <div class="card-body">
+                                            <h6>
+                                                NASA SPACE APPS NOIDA 2023
+                                            </h6>
+                                            <p class="hack-description">
+                                                World’s Largest Space &amp; Science Hackathon
+
+7-8th October 2023
+                                            </p>
+                                            <p class="last-date">
+                                                Registrations end:
+                                                    Sat Oct 07 2023
+                                            </p>
+                                            <div class="clearfix">
+                                                <div class="float-left">
+                                                    <p class="reg-fee">
+                                                        <span>Fee: </span>
+                                                        Free
+                                                    </p>
+                                                </div>
+                                                <div class="float-right">
+                                                    <p class="hack-type">
+                                                        Mode : <span
+                                                            class="text-success">
+                                                            Offline
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            
+                                                <a name="" id=""
+                                                    class="btn btn-gradient w-100 reg-close-btn"
+                                                    href="https://spaceappsnoida.hack2skill.com"
+                                                    role="button"
+                                                    target="_blank"
+                                                    rel="noreferrer">
+                                                </a>
+                                            
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                    
+                        
+                            <div class="swiper-slide newCard ">
+                                <a class="text-link" href="https://hackathon.icc-cricket.com?utm_source=homepage&amp;utm_medium=promotional"
+                                    target="_blank">
+                                    <div class="card hack-event-card">
+                                        <img class="card-img-top border-bottom"
+                                            src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-08-17T06%3A46%3A00.993Z-homepage%20icc%202.png"
+                                            alt="ICC NIUM &#39;NEXT-IN 2.0&#39; HACKATHON">
+                                        <div class="card-body">
+                                            <h6>
+                                                ICC NIUM &#39;NEXT-IN 2.0&#39; HACKATHON
+                                            </h6>
+                                            <p class="hack-description">
+                                                The revolutionary hackathon that merges the exhilarating world of cricket with cutting-edge technologies like AI/ML, Fintech, AR/VR, and more. Prepare to ignite a new era in cricket innovation and unite with the worldwide community of sports and technology innovators.
+                                            </p>
+                                            <p class="last-date">
+                                                Registrations end:
+                                                    Thu Oct 05 2023
+                                            </p>
+                                            <div class="clearfix">
+                                                <div class="float-left">
+                                                    <p class="reg-fee">
+                                                        <span>Fee: </span>
+                                                        Free
+                                                    </p>
+                                                </div>
+                                                <div class="float-right">
+                                                    <p class="hack-type">
+                                                        Mode : <span
+                                                            class="text-success">
+                                                            Online &amp; In Person (Demo Day)
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            
+                                                <a name="" id=""
+                                                    class="btn btn-gradient w-100 reg-close-btn"
+                                                    href="https://hackathon.icc-cricket.com?utm_source=homepage&amp;utm_medium=promotional"
+                                                    role="button"
+                                                    target="_blank"
+                                                    rel="noreferrer">
+                                                </a>
+                                            
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="iniinfo">
-                    <h4>Hello World</h4>
-                    <p>
-                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, quia. Aspernatur incidunt error ipsum, nisi hic eos recusandae vitae dolorem. Molestiae totam aliquam magni laborum numquam molestias id! Possimus, expedita.
-                    </p>
-                </div>
-            </a>
-                    <a href="" class="initiativediv  orange">
-                <div class=" iniiconbox">
-                  <img src="assets/rings/3D ICONS-02.png" style="position:relative;transition:0.5s ease; width:100%" alt="">
-                    <div class="shadowdiv">
-                    </div>
-                </div>
-                <div class="iniinfo">
-                    <h4>Mentoring Program</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit animi distinctio impedit consequuntur, vero facilis eius cum vel quas totam sint qui exercitationem dolor dolores voluptate quia nam fuga porro.
-                    </p>
-                </div>
-            </a>
-                    <a href="" class="initiativediv  yaleblue">
-                <div class=" iniiconbox">
-                  <img src="assets/rings/3D ICONS-03.png" style="position:relative;transition:0.5s ease; width:100%" alt="">
-                    <div class="shadowdiv">
-                    </div>
-                </div>
-                <div class="iniinfo">
-                    <h4>TedX Program</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, doloribus? Corporis sit veniam pariatur aut nam ipsam! Reiciendis nam inventore eius enim odio omnis ducimus, debitis sit, error commodi quidem.
-                    </p>
-                </div>
-            </a>
-                    <a href="" class="initiativediv  violet">
-                <div class=" iniiconbox">
-                  <img src="assets/rings/3D ICONS-04.png" style="position:relative;transition:0.5s ease; width:100%" alt="">
-                    <div class="shadowdiv">
-                    </div>
-                </div>
-                <div class="iniinfo">
-                    <h4>Inventron</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, itaque ratione. Officia est perferendis dolores eius assumenda saepe fuga blanditiis laboriosam aut sint, repellendus beatae! Maiores sapiente ducimus velit molestiae?
-                    </p>
-                </div>
-            </a>
-                    <a href="" class="initiativediv  pink">
-                <div class=" iniiconbox">
-                  <img src="assets/rings/3D ICONS-05.png" style="position:relative;transition:0.5s ease; width:100%" alt="">
-                    <div class="shadowdiv">
-                    </div>
-                </div>
-                <div class="iniinfo">
-                    <h4>Innovation challenge</h4>
-                    <p>
-                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo dicta minus, perspiciatis provident cupiditate pariatur quos fugit animi architecto tenetur numquam reiciendis voluptatibus earum a beatae voluptatum, esse accusamus delectus?
-                    </p>
-                </div>
-            </a>
-                    <a href="" class="initiativediv  lightblue">
-                <div class=" iniiconbox">
-                  <img src="assets/rings/3D ICONS-06.png" style="position:relative;transition:0.5s ease; width:100%" alt="">
-                    <div class="shadowdiv">
-                    </div>
-                </div>
-                <div class="iniinfo">
-                    <h4>Metaloop</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti at, possimus atque, officiis animi, vitae aliquid magnam non repellendus expedita porro et? Sunt aliquid eligendi quia quis exercitationem voluptatum in!
-                    </p>
-                </div>
-            </a>
-                    <a href="" class="initiativediv  turquoise">
-                <div class=" iniiconbox">
-                  <img src="assets/rings/3D ICONS-07.png" style="position:relative;transition:0.5s ease; width:100%" alt="">
-                    <div class="shadowdiv">
-                    </div>
-                </div>
-                <div class="iniinfo">
-                    <h4>Ecstacy</h4>
-                    <p>
-                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, et! Nostrum nemo tenetur amet obcaecati mollitia error atque tempora placeat modi, ducimus voluptatum, non aliquid facilis doloribus? Ducimus, porro voluptatum.
-                    </p>
-                </div>
-            </a>
-                    <a href="" class="initiativediv  steelblue">
-                <div class=" iniiconbox">
-                  <img src="assets/rings/3D ICONS-08.png" style="position:relative;transition:0.5s ease; width:100%" alt="">
-                    <div class="shadowdiv">
-                    </div>
-                </div>
-                <div class="iniinfo">
-                    <h4>Amychan-event</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, officia quisquam minus adipisci et dolore fugit! Sit dolorum eligendi voluptate velit earum non at iure error quae aliquam, libero consectetur.
-                    </p>
-                </div>
-            </a>
-            </div>
-</div>
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+                            <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
         integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
         crossorigin="anonymous"></script>
@@ -2065,7 +2671,125 @@ width: 100%;
     </div>
 </footer>
 
+   <!-- Swiper JS -->
+   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
+   <!-- Initialize Swiper -->
+   <script>
+       var swiper = new Swiper(".mySwiper", {
+           cssMode: true,
+           navigation: {
+               nextEl: ".swiper-button-next",
+               prevEl: ".swiper-button-prev",
+               clickable: true,
+           },
+           slidesPerView: 4,
+           spaceBetween: 50,
+           pagination: {
+               el: ".swiper-pagination",
+               clickable: true,
+           },
+           mousewheel: true,
+           keyboard: true,
+           grabCursor: true,
+           breakpoints: {
+               "@0.00": {
+                   slidesPerView: 1,
+                   spaceBetween: 10,
+               },
+               "@0.75": {
+                   slidesPerView: 2,
+                   spaceBetween: 30,
+               },
+               "@1.00": {
+                   slidesPerView: 3,
+                   spaceBetween: 40,
+               },
+               "@1.50": {
+                   slidesPerView: 4,
+                   spaceBetween: 40,
+               },
+           },
+       });
+       var swiperTest = new Swiper(".myTestimonialSwiper", {
+           cssMode: true,
+           navigation: {
+               nextEl: ".swiper-button-next",
+               prevEl: ".swiper-button-prev",
+               clickable: true,
+           },
+           slidesPerView: 4,
+           spaceBetween: 50,
+           pagination: {
+               el: ".swiper-pagination",
+               clickable: true,
+           },
+           mousewheel: true,
+           keyboard: true,
+           grabCursor: true,
+           breakpoints: {
+               "@0.00": {
+                   slidesPerView: 1,
+                   spaceBetween: 10,
+               },
+               "@0.99": {
+                   slidesPerView: 2,
+                   spaceBetween: 40,
+               },
+               "@1.45": {
+                   slidesPerView: 3,
+                   spaceBetween: 40,
+               },
+               "@1.85": {
+                   slidesPerView: 4,
+                   spaceBetween: 40,
+               },
+           },
+       });
+       var swiperInt = new Swiper(".myIntSwiper", {
+           cssMode: true,
+           grabCursor: true,
+           navigation: {
+               nextEl: ".swiper-button-next",
+               prevEl: ".swiper-button-prev",
+               clickable: true,
+           },
+           slidesPerView: 1,
+           spaceBetween: 50,
+           pagination: {
+               el: ".swiper-pagination",
+               clickable: true,
+           },
+           mousewheel: true,
+           keyboard: true
+       });
+   </script>
+   <script>
+       var eventLength = $('.element_row')[0].children.length;
+       var i = 4;
+       console.log(eventLength);
+
+       if (eventLength > 4) {
+           console.log("Enter IF");
+           for (i; i < (eventLength); i++) {
+               $('.element_row')[0].children[i].classList.add('toggle_me');
+           }
+       } else {
+           console.log("Event less than 4");
+       }
+       var eventLengthcH = $('.element_row_cH')[0].children.length;
+       var j = 4;
+       console.log(eventLengthcH);
+
+       if (eventLengthcH > 4) {
+           console.log("Enter IF");
+           for (j; j < (eventLengthcH); j++) {
+               $('.element_row_cH')[0].children[j].classList.add('toggle_me_cH');
+           }
+       } else {
+           console.log("Event less than 4");
+       }
+   </script>
 
     <script type="text/javascript">
         $('.counter').each(function() {

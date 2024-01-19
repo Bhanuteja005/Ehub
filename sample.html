@@ -1,0 +1,2142 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+<!-- FontAwesome Icons -->
+<script src="https://kit.fontawesome.com/e3b250d36f.js" crossorigin="anonymous"></script>
+<!-- https://swiperjs.com/ -->
+<link rel="stylesheet" href="/hackpage/swiper/css/swiper.css">
+<!-- Lottie -->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<link rel="stylesheet" href="assets/css/main.css">
+
+<style>
+    .theme-text {
+        color: var(--primary-color) !important;
+    }
+
+    @media(max-width: 540px) {
+        .rounded-circle {
+            border-radius: 10px !important;
+        }
+
+        .hack-details .float-right h6 {
+            font-size: 0.6rem;
+        }
+
+        .hack-details .float-right h4 {
+            font-size: 1rem;
+        }
+    }
+</style>
+<style>
+    .winner_card_btn {
+        background-color: #e9eef1;
+        color: #000000 !important;
+        padding: 0.5rem 0.25rem;
+        border-radius: 4px;
+    }
+
+    .gray-border {
+        border: 1px solid #babec1 !important;
+        color: #5a6167 !important;
+        padding: 0.5rem 0.25rem;
+        border-radius: 4px;
+        font-weight: 500;
+    }
+
+    .common-winnerSec {
+        text-align: center;
+        position: relative;
+    }
+
+    .common-winnerSec img {
+        position: absolute;
+        top: 0;
+        left: 20px;
+    }
+
+    @media(max-width:1200px) {
+        .common-winnerSec img {
+            left: 5px;
+        }
+    }
+
+    @media(max-width:775px) {
+        .common-winnerSec img {
+            left: 15px;
+        }
+    }
+
+    @media(max-width:375px) {
+        .common-winnerSec .card-title {
+            font-size: 1.3rem;
+        }
+
+        .common-winnerSec img {
+            left: 5px;
+        }
+    }
+    p{
+        margin-bottom: 0;
+    }
+</style>
+
+</head>
+<body>
+    <section class="details-section">
+        <div class="container-lg">
+            <div class="row">
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="left-column">
+                        <picture>
+                            <img class="w-75 rounded hack-side-logo"
+                                src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-12-15T05%3A45%3A23.184Z-dp%20%E2%80%93%202.png" alt="Scale +91 Hackathon | FFI 2024">
+                        </picture>
+                        <h1 class="mb-4">
+                            Scale +91 Hackathon | FFI 2024
+                        </h1>
+                        
+                        <h6 class="text-uppercase">
+                            Submission Deadline
+                        </h6>
+                        <h4 class="text-uppercase mb-3 font-weight-normal">
+                            <div class="endDate"></div>
+                        </h4>
+                        <!--  -->
+                        
+                        
+                            
+                                <a name="" id="" class="btn btn-primary" href="javascript:void(0);" role="button"
+                                    onclick="keepMe();">
+                                    Register Now
+                                </a>
+                            
+                        
+                        
+                        <!--  -->
+                        
+
+                        <hr class="my-3">
+                        
+                        <!-- <h5 class="mb-2">
+                            Join us on Slack
+                        </h5>
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="140" height="67" viewBox="0 0 233 67">
+                            <defs>
+                                <pattern id="pattern" preserveAspectRatio="none" width="100%" height="100%"
+                                    viewBox="0 0 150 43">
+                                    <image width="150" height="43"
+                                        xlink:href="data:image/png;base64,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" />
+                                </pattern>
+                            </defs>
+                            <rect id="Image_9" data-name="Image 9" width="233" height="67" fill="url(#pattern)" />
+                        </svg>
+                        <hr class="my-4"> -->
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="column-right">
+
+                        <!-- Hackathon Winners -->
+                        
+
+                        <!-- REG Section (Bootcamp) -->
+                        
+
+                        <!-- About Section -->
+                        
+                        <div id="about-link" class="scroll-link"></div>
+                        <div class="container-fluid about-section">
+                            <h3>
+                                
+                                About
+                                
+                            </h3>
+                            <p>
+                                <h4><strong>🚀 Welcome to <span style="color: rgb(140, 82, 255);">Scale +91</span>: Revolutionizing Fintech through Innovation 🚀</strong></h4>
+<p>Embark on a transformative journey with us at <em>Scale +91, an exhilarating hackathon presented by Constellar under the umbrella of FinTech Festival India 2024, and powered by Hack2skill as the Innovation Partner</em>.&nbsp;</p>
+<p>As the pulse of innovation beats at its core, this event is not just a competition; it's a convergence of brilliance, creativity, and groundbreaking ideas. Get ready to redefine the future of FinTech and be a catalyst for change!</p>
+<p>&nbsp;</p>
+<p><em><strong>Unveiling the Canvas of Scale +91:</strong></em></p>
+<p>Scale +91 emerges as an epitome of limitless possibilities at the crossroads of innovation and finance. Fueled by the FinTech theme, this hackathon invites tech enthusiasts from every corner of India to converge their skills and imagination. The challenges are not mere problems; they are gateways to crafting real solutions that can reshape the financial landscape.</p>
+<p>&nbsp;</p>
+<p><em>🌐 <strong>Organized by Fintech Festival India 2024:</strong></em></p>
+<p>Scale 91 stands proudly as an integral part of the prestigious FinTech Festival India 2024, where the finest minds converge to explore cutting-edge trends and innovations defining the future of finance with advanced technology. As the innovation partner for this monumental summit, Hack2skill ensures that Scale 91 becomes an immersive experience, a melting pot of ideas that push the boundaries of what's possible.</p>
+<p>&nbsp;</p>
+<p><em>🔍 <strong>Eligibility Criteria:</strong></em></p>
+<p>This hackathon is <span style="text-decoration: underline;">open to all trailblazers</span> including students, working professionals, freelancers, startups, developers, and innovators alike &ndash; anyone with a flair for Financial Technology. Whether you're a seasoned veteran or an enthusiastic newcomer, this hackathon is your platform to shine. Real recognition awaits those who dare to dream and bring those dreams to life!</p>
+<p>&nbsp;</p>
+<p><em>🚀 <strong>Real Problems, Real Solutions:</strong></em></p>
+<p>Our mantra at Scale +91 is simple &ndash; <span style="text-decoration: underline;">real problems demand real solutions</span>. Scale +91 is&nbsp;not just an ideation; it's a call to action. The challenges presented delve into the complexities of the FinTech realm, providing participants with an opportunity to create tangible, impactful solutions that can make a difference.</p>
+<p>The young, the experienced, the bold, and the daredevils &ndash; this is your moment to join forces and be a part of something monumental and complete with the best, in the collective pursuit of reshaping the future of FinTech.</p>
+<p>&nbsp;</p>
+<p><strong>Ready to be a FinTech trailblazer? </strong>Register <strong>NOW</strong> and be part of Scale +91 &ndash; where innovation meets recognition, and the future of fintech is in your hands. Let's redefine the FinTech ecosystem together! 🚀💡</p>
+<p>#Scale91 #FintechRevolution #Hack2skill #Constellar #FinTechFestivalIndia</p>
+                            </p>
+                            
+                            
+                        </div>
+
+                        <hr class="my-4">
+
+                        
+                        <!-- Steps To Follow -->
+                        <!-- <div id="steps-link" class="scroll-link"></div>
+                        <div class="container-fluid">
+                            <h3>
+                                Steps to Follow
+                            </h3>
+                            <img class="w-100 mt-2 rounded" src="https://via.placeholder.com/500x200" alt="">
+                        </div>
+
+                        <hr class="my-4"> -->
+
+                        <!-- Judging Criteria -->
+                        
+
+                        <!-- Challenges -->
+                        
+                        <div id="challenges-link" class="scroll-link"></div>
+                        <div class="container-fluid">
+                            <h3>
+                                
+                                Challenges
+                                
+                            </h3>
+
+
+                            <!-- DESKTOP VIEW -->
+                            
+                            <div class="d-block d-sm-none">
+                                <div class="col-sm-12 p-0 m-0">
+                                    <!-- Swiper -->
+
+                                    <div class="swiper-container swiper-challenge challenge-1 pb-4">
+                                        <div class="swiper-wrapper">
+                                            
+                                            <div class="swiper-slide">
+                                                <div class="card hack-card">
+                                                    <img class="card-img-top" src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-12-14T10%3A35%3A41.286Z-ps1.png" alt="">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Real-time Market Insights</h5>
+                                                        <p class="card-text">
+                                                            Unleash AI algorithms that decode complex financial data in real-time, empowering FinTech companies and investors with precise market insights and predictions.
+
+                                                        </p>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Modal End -->
+                                            
+                                            <div class="swiper-slide">
+                                                <div class="card hack-card">
+                                                    <img class="card-img-top" src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-12-14T10%3A37%3A12.431Z-ps2.png" alt="">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Blockchain and Cryptocurrency Innovations</h5>
+                                                        <p class="card-text">
+                                                            Dive into the synergy of AI and blockchain, crafting solutions that bolster security in cryptocurrency transactions, enhance DeFi platforms, and open new vistas of innovation.
+
+
+                                                        </p>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Modal End -->
+                                            
+                                            <div class="swiper-slide">
+                                                <div class="card hack-card">
+                                                    <img class="card-img-top" src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-12-14T10%3A37%3A39.351Z-ps3.png" alt="">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Algorithmic Trading Strategies</h5>
+                                                        <p class="card-text">
+                                                            Master AI-powered algorithmic trading. Craft strategies that navigate market trends, optimizing portfolios for maximum returns and minimal risks.
+
+                                                        </p>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Modal End -->
+                                            
+                                            <div class="swiper-slide">
+                                                <div class="card hack-card">
+                                                    <img class="card-img-top" src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-12-14T10%3A38%3A05.450Z-ps4.png" alt="">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Instant Card Issuance</h5>
+                                                        <p class="card-text">
+                                                            Redefine convenience with instant virtual card issuance upon approval. Experience the freedom to transact while waiting for your physical card.
+
+
+                                                        </p>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Modal End -->
+                                            
+                                            <div class="swiper-slide">
+                                                <div class="card hack-card">
+                                                    <img class="card-img-top" src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-12-14T10%3A38%3A41.587Z-ps5.png" alt="">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">AI-Enhanced Threat Detection</h5>
+                                                        <p class="card-text">
+                                                            Secure the digital realm with AI-driven threat detection. Stay one step ahead of cyber threats and safeguard your digital assets.
+
+                                                        </p>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Modal End -->
+                                            
+                                        </div>
+                                    </div>
+                                    <!-- Add Pagination -->
+                                    <div class="swiper-pagination-challenge-1 text-center w-100"></div>
+                                </div>
+                            </div>
+
+                            <!-- Challenge Modal -->
+                            
+                            <div class="modal fade" id="mc10" tabindex="-1" role="dialog">
+                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Problem
+                                                Statement
+                                                in detail
+                                            </h5>
+                                            <button class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="text-center my-2 mb-4">
+                                                            <h3>Real-time Market Insights
+                                                            </h3>
+                                                        </div>
+                                                        <div>
+                                                            
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="modal fade" id="mc11" tabindex="-1" role="dialog">
+                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Problem
+                                                Statement
+                                                in detail
+                                            </h5>
+                                            <button class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="text-center my-2 mb-4">
+                                                            <h3>Blockchain and Cryptocurrency Innovations
+                                                            </h3>
+                                                        </div>
+                                                        <div>
+                                                            
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="modal fade" id="mc12" tabindex="-1" role="dialog">
+                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Problem
+                                                Statement
+                                                in detail
+                                            </h5>
+                                            <button class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="text-center my-2 mb-4">
+                                                            <h3>Algorithmic Trading Strategies
+                                                            </h3>
+                                                        </div>
+                                                        <div>
+                                                            
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="modal fade" id="mc13" tabindex="-1" role="dialog">
+                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Problem
+                                                Statement
+                                                in detail
+                                            </h5>
+                                            <button class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="text-center my-2 mb-4">
+                                                            <h3>Instant Card Issuance
+                                                            </h3>
+                                                        </div>
+                                                        <div>
+                                                            
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="modal fade" id="mc14" tabindex="-1" role="dialog">
+                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Problem
+                                                Statement
+                                                in detail
+                                            </h5>
+                                            <button class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="text-center my-2 mb-4">
+                                                            <h3>AI-Enhanced Threat Detection
+                                                            </h3>
+                                                        </div>
+                                                        <div>
+                                                            
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+
+                            <!-- MOBILE VIEW -->
+                            <div class="d-none d-sm-block">
+                                <div class="row">
+                                    
+                                    <div class="col-md-6 mb-5">
+                                        <div class="card hack-card">
+                                            <img class="card-img-top" src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-12-14T10%3A35%3A41.286Z-ps1.png" alt="">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Real-time Market Insights</h5>
+                                                <p class="card-text">
+                                                    Unleash AI algorithms that decode complex financial data in real-time, empowering FinTech companies and investors with precise market insights and predictions.
+
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="c10" tabindex="-1" role="dialog">
+                                        <div
+                                            class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    
+                                                    <h5 class="modal-title" id="exampleModalLabel">Problem Statement
+                                                        in detail
+                                                    </h5>
+                                                    <button class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="text-center my-2 mb-4">
+                                                                    <h3>Real-time Market Insights
+                                                                    </h3>
+                                                                </div>
+                                                                <div>
+                                                                    
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Modal End -->
+                                    
+                                    <div class="col-md-6 mb-5">
+                                        <div class="card hack-card">
+                                            <img class="card-img-top" src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-12-14T10%3A37%3A12.431Z-ps2.png" alt="">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Blockchain and Cryptocurrency Innovations</h5>
+                                                <p class="card-text">
+                                                    Dive into the synergy of AI and blockchain, crafting solutions that bolster security in cryptocurrency transactions, enhance DeFi platforms, and open new vistas of innovation.
+
+
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="c11" tabindex="-1" role="dialog">
+                                        <div
+                                            class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    
+                                                    <h5 class="modal-title" id="exampleModalLabel">Problem Statement
+                                                        in detail
+                                                    </h5>
+                                                    <button class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="text-center my-2 mb-4">
+                                                                    <h3>Blockchain and Cryptocurrency Innovations
+                                                                    </h3>
+                                                                </div>
+                                                                <div>
+                                                                    
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Modal End -->
+                                    
+                                    <div class="col-md-6 mb-5">
+                                        <div class="card hack-card">
+                                            <img class="card-img-top" src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-12-14T10%3A37%3A39.351Z-ps3.png" alt="">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Algorithmic Trading Strategies</h5>
+                                                <p class="card-text">
+                                                    Master AI-powered algorithmic trading. Craft strategies that navigate market trends, optimizing portfolios for maximum returns and minimal risks.
+
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="c12" tabindex="-1" role="dialog">
+                                        <div
+                                            class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    
+                                                    <h5 class="modal-title" id="exampleModalLabel">Problem Statement
+                                                        in detail
+                                                    </h5>
+                                                    <button class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="text-center my-2 mb-4">
+                                                                    <h3>Algorithmic Trading Strategies
+                                                                    </h3>
+                                                                </div>
+                                                                <div>
+                                                                    
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Modal End -->
+                                    
+                                    <div class="col-md-6 mb-5">
+                                        <div class="card hack-card">
+                                            <img class="card-img-top" src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-12-14T10%3A38%3A05.450Z-ps4.png" alt="">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Instant Card Issuance</h5>
+                                                <p class="card-text">
+                                                    Redefine convenience with instant virtual card issuance upon approval. Experience the freedom to transact while waiting for your physical card.
+
+
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="c13" tabindex="-1" role="dialog">
+                                        <div
+                                            class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    
+                                                    <h5 class="modal-title" id="exampleModalLabel">Problem Statement
+                                                        in detail
+                                                    </h5>
+                                                    <button class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="text-center my-2 mb-4">
+                                                                    <h3>Instant Card Issuance
+                                                                    </h3>
+                                                                </div>
+                                                                <div>
+                                                                    
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Modal End -->
+                                    
+                                    <div class="col-md-6 mb-5">
+                                        <div class="card hack-card">
+                                            <img class="card-img-top" src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-12-14T10%3A38%3A41.587Z-ps5.png" alt="">
+                                            <div class="card-body">
+                                                <h5 class="card-title">AI-Enhanced Threat Detection</h5>
+                                                <p class="card-text">
+                                                    Secure the digital realm with AI-driven threat detection. Stay one step ahead of cyber threats and safeguard your digital assets.
+
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="c14" tabindex="-1" role="dialog">
+                                        <div
+                                            class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    
+                                                    <h5 class="modal-title" id="exampleModalLabel">Problem Statement
+                                                        in detail
+                                                    </h5>
+                                                    <button class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="text-center my-2 mb-4">
+                                                                    <h3>AI-Enhanced Threat Detection
+                                                                    </h3>
+                                                                </div>
+                                                                <div>
+                                                                    
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Modal End -->
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <hr class="my-4">
+                        
+
+
+                        <!-- Mentors -->
+                        
+                        <div id="mentors-link" class="scroll-link"></div>
+                        <div class="container-fluid">
+                            <h3>
+                                
+                                Hackathon Mentors
+                                
+                            </h3>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    
+                                    
+                                    <!-- Mobile Verison -->
+                                    <div class="row m-0 p-0 d-block d-sm-none">
+                                        <div class="col-sm-12 p-0 m-0">
+                                            <div class="swiper-container swiper-mentor-1 pb-4">
+                                                <div class="swiper-wrapper">
+                                                    <!-- Mentor Start -->
+                                                    
+                                                    <div class="swiper-slide">
+                                                        <div class="card hack-card">
+                                                            
+                                                            <img class="card-img-top"
+                                                                src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2024-01-06T09%3A45%3A28.950Z-Vipul%20Saini.png"
+                                                                onerror="this.onerror=null;this.src='/hack_assets/img/default-svg.svg'"
+                                                                alt="">
+                                                            
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">Vipul Saini</h5>
+                                                                <p class="mb-1">
+                                                                    AVP - Startup
+                                                                </p>
+                                                                <h6>
+                                                                    HDFC Bank
+                                                                </h6>
+                                                                
+                                                                <a name="" id="" class="btn-link"
+                                                                    href="https://www.linkedin.com/in/vipulksaini/"
+                                                                    role="button">
+                                                                    View More
+                                                                </a>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="swiper-slide">
+                                                        <div class="card hack-card">
+                                                            
+                                                            <img class="card-img-top"
+                                                                src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2024-01-06T09%3A45%3A54.566Z-Prabhu%20Elangovan.png"
+                                                                onerror="this.onerror=null;this.src='/hack_assets/img/default-svg.svg'"
+                                                                alt="">
+                                                            
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">Prabhu Elangovan</h5>
+                                                                <p class="mb-1">
+                                                                    AVP
+                                                                </p>
+                                                                <h6>
+                                                                    Protean eGov Technologies
+                                                                </h6>
+                                                                
+                                                                <a name="" id="" class="btn-link"
+                                                                    href="https://www.linkedin.com/in/%F0%9F%87%AE%F0%9F%87%B3-prabhu-elangovan-01350a63/?originalSubdomain=in"
+                                                                    role="button">
+                                                                    View More
+                                                                </a>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="swiper-slide">
+                                                        <div class="card hack-card">
+                                                            
+                                                            <img class="card-img-top"
+                                                                src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2024-01-15T04%3A53%3A44.369Z-Bidhan%20Biswas.png"
+                                                                onerror="this.onerror=null;this.src='/hack_assets/img/default-svg.svg'"
+                                                                alt="">
+                                                            
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">Bidhan Biswas</h5>
+                                                                <p class="mb-1">
+                                                                    AVP - Strategic Fintech Alliances
+                                                                </p>
+                                                                <h6>
+                                                                    Yes Bank
+                                                                </h6>
+                                                                
+                                                                <a name="" id="" class="btn-link"
+                                                                    href="https://www.linkedin.com/in/bidhanb/?originalSubdomain=in"
+                                                                    role="button">
+                                                                    View More
+                                                                </a>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="swiper-pagination-mentor-1 text-center w-100"></div>
+                                        </div>
+                                    </div>
+                                    <!-- Web Starts -->
+                                    <div class="row mentor-desktop mb-3 d-none d-sm-flex">
+                                        
+                                        <div class="col-md-4 d-flex mb-4">
+                                            <div class="card hack-card">
+                                                
+                                                <img class="card-img-top" src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2024-01-06T09%3A45%3A28.950Z-Vipul%20Saini.png"
+                                                    onerror="this.onerror=null;this.src='/hack_assets/img/default-svg.svg'"
+                                                    alt="">
+                                                
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Vipul Saini</h5>
+                                                    <p class="mb-1">
+                                                        AVP - Startup
+                                                    </p>
+                                                    <h6>
+                                                        HDFC Bank
+                                                    </h6>
+                                                    
+                                                    <a name="" id="" class="btn-link"
+                                                        href="https://www.linkedin.com/in/vipulksaini/" role="button">
+                                                        View More
+                                                    </a>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-4 d-flex mb-4">
+                                            <div class="card hack-card">
+                                                
+                                                <img class="card-img-top" src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2024-01-06T09%3A45%3A54.566Z-Prabhu%20Elangovan.png"
+                                                    onerror="this.onerror=null;this.src='/hack_assets/img/default-svg.svg'"
+                                                    alt="">
+                                                
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Prabhu Elangovan</h5>
+                                                    <p class="mb-1">
+                                                        AVP
+                                                    </p>
+                                                    <h6>
+                                                        Protean eGov Technologies
+                                                    </h6>
+                                                    
+                                                    <a name="" id="" class="btn-link"
+                                                        href="https://www.linkedin.com/in/%F0%9F%87%AE%F0%9F%87%B3-prabhu-elangovan-01350a63/?originalSubdomain=in" role="button">
+                                                        View More
+                                                    </a>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-4 d-flex mb-4">
+                                            <div class="card hack-card">
+                                                
+                                                <img class="card-img-top" src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2024-01-15T04%3A53%3A44.369Z-Bidhan%20Biswas.png"
+                                                    onerror="this.onerror=null;this.src='/hack_assets/img/default-svg.svg'"
+                                                    alt="">
+                                                
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Bidhan Biswas</h5>
+                                                    <p class="mb-1">
+                                                        AVP - Strategic Fintech Alliances
+                                                    </p>
+                                                    <h6>
+                                                        Yes Bank
+                                                    </h6>
+                                                    
+                                                    <a name="" id="" class="btn-link"
+                                                        href="https://www.linkedin.com/in/bidhanb/?originalSubdomain=in" role="button">
+                                                        View More
+                                                    </a>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="my-4">
+                        
+
+                        <!-- Jury Common -->
+                        
+                        
+                        <div id="judges-link" class="scroll-link"></div>
+                        <div class="container-fluid">
+                            <h3>
+                                
+                                Jury Panel
+                                
+                            </h3>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    
+                                    
+                                    <!-- Mobile Verison -->
+                                    <div class="row m-0 p-0 d-block d-sm-none">
+                                        <div class="col-sm-12 p-0 m-0">
+                                            <div class="swiper-container swiper-mentor-2 pb-4">
+                                                <div class="swiper-wrapper">
+                                                    <!-- Mentor Start -->
+                                                    
+                                                    <div class="swiper-slide">
+                                                        <div class="card hack-card">
+                                                            
+                                                            <img class="card-img-top" src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2024-01-06T09%3A57%3A10.211Z-Prasanna%20Lohar.png"
+                                                                onerror="this.onerror=null;this.src='/hack_assets/img/default-svg.svg'"
+                                                                alt="">
+                                                            
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">Prasanna Lohar</h5>
+                                                                <p class="mb-1">
+                                                                    CEO, Founder
+                                                                </p>
+                                                                <h6>
+                                                                    Blockstack, India Blockchain Forum
+                                                                </h6>
+                                                                
+                                                                <a name="" id="" class="btn-link"
+                                                                    href="https://www.linkedin.com/in/prasannalohar/" role="button">
+                                                                    View More
+                                                                </a>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="swiper-slide">
+                                                        <div class="card hack-card">
+                                                            
+                                                            <img class="card-img-top" src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2024-01-06T10%3A01%3A07.342Z-Sharat%20Chandra.png"
+                                                                onerror="this.onerror=null;this.src='/hack_assets/img/default-svg.svg'"
+                                                                alt="">
+                                                            
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">Sharat Chandra</h5>
+                                                                <p class="mb-1">
+                                                                    Co-Founder
+                                                                </p>
+                                                                <h6>
+                                                                    India Blockchain Forum
+                                                                </h6>
+                                                                
+                                                                <a name="" id="" class="btn-link"
+                                                                    href="https://www.linkedin.com/in/sharatchandratechevangelist/" role="button">
+                                                                    View More
+                                                                </a>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="swiper-slide">
+                                                        <div class="card hack-card">
+                                                            
+                                                            <img class="card-img-top" src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2024-01-06T10%3A01%3A30.491Z-Monica%20Jasuja.png"
+                                                                onerror="this.onerror=null;this.src='/hack_assets/img/default-svg.svg'"
+                                                                alt="">
+                                                            
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">Monica Jasuja</h5>
+                                                                <p class="mb-1">
+                                                                    Fintech Product &amp; Strategy Consultant
+                                                                </p>
+                                                                <h6>
+                                                                    
+                                                                </h6>
+                                                                
+                                                                <a name="" id="" class="btn-link"
+                                                                    href="https://www.linkedin.com/in/jasuja/" role="button">
+                                                                    View More
+                                                                </a>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="swiper-pagination-mentor-2 text-center w-100"></div>
+                                        </div>
+                                    </div>
+                                    <!-- Web Starts -->
+                                    <div class="row mentor-desktop mb-3 d-none d-sm-flex">
+                                        
+                                        <div class="col-md-4 d-flex mb-4">
+                                            <div class="card hack-card">
+                                                
+                                                <img class="card-img-top" src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2024-01-06T09%3A57%3A10.211Z-Prasanna%20Lohar.png"
+                                                    onerror="this.onerror=null;this.src='/hack_assets/img/default-svg.svg'"
+                                                    alt="">
+                                                
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Prasanna Lohar</h5>
+                                                    <p class="mb-1">
+                                                        CEO, Founder
+                                                    </p>
+                                                    <h6>
+                                                        Blockstack, India Blockchain Forum
+                                                    </h6>
+                                                    
+                                                    <a name="" id="" class="btn-link"
+                                                        href="https://www.linkedin.com/in/prasannalohar/" role="button">
+                                                        View More
+                                                    </a>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-4 d-flex mb-4">
+                                            <div class="card hack-card">
+                                                
+                                                <img class="card-img-top" src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2024-01-06T10%3A01%3A07.342Z-Sharat%20Chandra.png"
+                                                    onerror="this.onerror=null;this.src='/hack_assets/img/default-svg.svg'"
+                                                    alt="">
+                                                
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Sharat Chandra</h5>
+                                                    <p class="mb-1">
+                                                        Co-Founder
+                                                    </p>
+                                                    <h6>
+                                                        India Blockchain Forum
+                                                    </h6>
+                                                    
+                                                    <a name="" id="" class="btn-link"
+                                                        href="https://www.linkedin.com/in/sharatchandratechevangelist/" role="button">
+                                                        View More
+                                                    </a>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-4 d-flex mb-4">
+                                            <div class="card hack-card">
+                                                
+                                                <img class="card-img-top" src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2024-01-06T10%3A01%3A30.491Z-Monica%20Jasuja.png"
+                                                    onerror="this.onerror=null;this.src='/hack_assets/img/default-svg.svg'"
+                                                    alt="">
+                                                
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Monica Jasuja</h5>
+                                                    <p class="mb-1">
+                                                        Fintech Product &amp; Strategy Consultant
+                                                    </p>
+                                                    <h6>
+                                                        
+                                                    </h6>
+                                                    
+                                                    <a name="" id="" class="btn-link"
+                                                        href="https://www.linkedin.com/in/jasuja/" role="button">
+                                                        View More
+                                                    </a>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="my-4">
+                        
+                        
+
+
+                        <!-- Schedule -->
+                        
+                        <div id="schedule-link" class="scroll-link"></div>
+                        <div class="container-fluid">
+                            <h3>
+                                Schedule
+                            </h3>
+
+                            <div class="new-schedule">
+
+                                <!-- DEFAULT -->
+                                <div class="details-agenda">
+                                    <div class="date-section">
+                                        <div class="date-card">
+                                            
+                                                <h6 class="date-card-start">
+                                                    Thu Dec 14 2023
+                                                     (Coordinated Universal Time)
+                                                </h6>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="destails-section">
+                                        <div class="details-area">
+                                            <div class="details-card">
+                                                <div class="clearfix">
+                                                    <div class="float-left time">
+                                                        <i class="fas fa-clock"></i>
+                                                        
+                                                            <span class="time-card-start">16:00</span>
+                                                        
+                                                    </div>
+                                                </div>
+
+                                                <h6>
+                                                    
+                                                        Registrations Open
+                                                    
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+
+                                <!-- LOOP -->
+                                
+
+                               <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+
+* {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary-color: #41A8D6;
+    --success-color: #40cc36;
+    --warning-color: #f8bb37;
+}
+
+body,
+pre {
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 400;
+}
+
+.theme-color {
+    color: var(--primary-color);
+}
+
+a {
+    color: var(--primary-color);
+}
+
+.wrapper {
+    margin-top: 57px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+
+    &:hover {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        outline: 2px solid rgb(54, 54, 54);
+    }
+
+}
+
+.scroll-link {
+    height: 0;
+    position: absolute;
+    margin-top: -135px;
+}
+
+
+
+.ql-editor {
+    white-space: inherit;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        line-height: 2;
+    }
+}
+
+
+.hack-creative {
+    width: 100%;
+    height: 350px;
+    margin: auto auto 2rem;
+    padding: 10px;
+    background-image: url('https://storage.googleapis.com/incind/1e837226-2a2f-4075-b6b3-4e3d46ac719bn2nXckB.jpg');
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: top;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+
+    @media(max-width: 1024px) {
+        height: 290px;
+    }
+
+    @media(max-width: 991px) {
+        height: 210px;
+    }
+
+    @media(max-width: 767.98px) {
+        height: 236px;
+        width: 100%;
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+    }
+
+    @media(max-width: 575px) {
+        height: 176px;
+    }
+
+    @media(max-width: 425px) {
+        height: 130px;
+    }
+
+    @media(max-width: 375px) {
+        height: 115px;
+    }
+
+    @media(max-width: 320px) {
+        height: 98px;
+    }
+}
+
+
+.hack-details 
+
+    picture {
+        img {
+            @media(min-width: 767.98px) {
+                width: 100%;
+            }
+
+            width: 70px;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .float-right {
+        text-align: right;
+
+        a {
+            @media(max-width: 575px) {
+                display: none;
+            }
+        }
+
+        h6 {
+            font-size: 0.7rem;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+        }
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        font-weight: 700;
+
+        span {
+            background-color: var(--primary-color);
+            font-size: 0.7rem;
+            padding: 0.5rem 0.65rem;
+            margin-left: 0.5rem;
+            vertical-align: bottom;
+            border-radius: 0;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            -ms-border-radius: 0;
+            -o-border-radius: 0;
+        }
+    }
+
+    .details {
+        font-size: 0.9rem;
+        font-weight: 400;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        color: rgb(99, 99, 99);
+    }
+
+    .hack-stats {
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    .date-section {
+        text-align: right;
+
+        .btn-primary {
+            padding: 0.5rem 1.75rem;
+            border-radius: 2px;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            -ms-border-radius: 2px;
+            -o-border-radius: 2px;
+        }
+    }
+
+.new-schedule {
+    padding: 2rem 0.5rem;
+}
+
+.new-schedule .details-agenda {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: 1rem;
+}
+
+.new-schedule .date-section,
+.new-schedule .destails-section {
+    padding: 0 15px;
+}
+
+.new-schedule .date-section {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 19%;
+    flex: 0 0 19%;
+    max-width: 19%;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.new-schedule .destails-section {
+    max-width: 100%;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 81%;
+    flex: 0 0 81%;
+    max-width: 81%;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.new-schedule .date-card {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 115px;
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    padding: 1rem;
+    z-index: 2;
+}
+
+.new-schedule .date-card::before {
+    content: "";
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    right: -8px;
+    top: 24%;
+    background-color: var(--primary-color);
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    z-index: -1;
+}
+
+.new-schedule .date-card h6 {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.new-schedule .details-area {
+    border: 1px solid #efefef;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+
+.new-schedule .clickableSchedule .details-area {
+    border: 1px solid #efefef;
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+.new-schedule .clickableSchedule .details-area:hover {
+    transition: box-shadow 0.5s ease-in-out;
+    box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+}
+
+.new-schedule .details-area .details-card {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px dashed #e5e5e5;
+}
+
+
+.new-schedule .details-area .details-card h6 {
+    font-weight: 600;
+}
+
+.new-schedule .details-area .details-card:last-of-type {
+    border-bottom: none;
+}
+
+.new-schedule .details-area .time {
+    color: #696a87;
+    margin-bottom: 0.2rem;
+    font-size: 0.8rem;
+}
+
+.new-schedule .details-area p {
+    color: #1e1e1f;
+}
+
+@media(max-width: 575px) {
+    .new-schedule .details-agenda {
+        margin-bottom: 2rem;
+    }
+
+    .new-schedule .date-section {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 1.2rem;
+    }
+
+    .new-schedule .destails-section {
+        max-width: 100%;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .new-schedule .date-card::before {
+        right: unset;
+        bottom: -8px;
+        top: unset;
+    }
+}
+
+                               </style> 
+                                
+                                <div class="details-agenda">
+                                    <div class="date-section">
+                                        <div class="date-card">
+                                            <h6 class="dateHere">
+                                                
+                                                Tue Dec 26 2023 00:00:00 GMT+0000 (Coordinated Universal Time)
+                                                
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    <div class="destails-section">
+                                        <div class="details-area">
+                                            <div class="details-card">
+                                                <div class="clearfix">
+                                                    <div class="float-left time">
+                                                        <i class="fas fa-clock"></i>
+                                                        <span class="timeHere">
+                                                            
+                                                            05:30
+                                                            
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <h6>
+                                                    Idea Submissions Open
+                                                </h6>
+
+                                                
+                                                <p>
+                                                    Idea Submissions Open: Teams can start submitting their innovation ideas for the selected problem statements
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                <div class="details-agenda">
+                                    <div class="date-section">
+                                        <div class="date-card">
+                                            <h6 class="dateHere">
+                                                
+                                                Tue Jan 09 2024 11:30:00 GMT+0000 (Coordinated Universal Time)
+                                                
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    <div class="destails-section">
+                                        <div class="details-area">
+                                            <div class="details-card">
+                                                <div class="clearfix">
+                                                    <div class="float-left time">
+                                                        <i class="fas fa-clock"></i>
+                                                        <span class="timeHere">
+                                                            
+                                                            17:00
+                                                            
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <h6>
+                                                    Problem Statement Explainer (Intro) Session
+                                                </h6>
+
+                                                
+                                                <p>
+                                                    Agenda: Explanation of each of the Problem Statements and overview of the hackathon flow/structure  (Don&#39;t worry! If you miss this session, would be happy to assist on - support@hack2kill.com)
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                <div class="details-agenda">
+                                    <div class="date-section">
+                                        <div class="date-card">
+                                            <h6 class="dateHere">
+                                                
+                                                Thu Jan 25 2024 11:30:00 GMT+0000 (Coordinated Universal Time)
+                                                
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    <div class="destails-section">
+                                        <div class="details-area">
+                                            <div class="details-card">
+                                                <div class="clearfix">
+                                                    <div class="float-left time">
+                                                        <i class="fas fa-clock"></i>
+                                                        <span class="timeHere">
+                                                            
+                                                            17:00
+                                                            
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <h6>
+                                                    AMA Session
+                                                </h6>
+
+                                                
+                                                <p>
+                                                    This is an interactive session for the participants to ask questions to the speakers/mentors of the hackathon.
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                <div class="details-agenda">
+                                    <div class="date-section">
+                                        <div class="date-card">
+                                            <h6 class="dateHere">
+                                                
+                                                Sun Jan 28 2024 00:00:00 GMT+0000 (Coordinated Universal Time)
+                                                
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    <div class="destails-section">
+                                        <div class="details-area">
+                                            <div class="details-card">
+                                                <div class="clearfix">
+                                                    <div class="float-left time">
+                                                        <i class="fas fa-clock"></i>
+                                                        <span class="timeHere">
+                                                            
+                                                            05:30
+                                                            
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <h6>
+                                                    Registrations &amp; Idea Submissions Close
+                                                </h6>
+
+                                                
+                                                <p>
+                                                    Registrations and the  idea submissions for the hackathon closes on the given date.
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                <div class="details-agenda">
+                                    <div class="date-section">
+                                        <div class="date-card">
+                                            <h6 class="dateHere">
+                                                
+                                                Mon Jan 29 2024 00:00:00 GMT+0000 (Coordinated Universal Time)
+                                                
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    <div class="destails-section">
+                                        <div class="details-area">
+                                            <div class="details-card">
+                                                <div class="clearfix">
+                                                    <div class="float-left time">
+                                                        <i class="fas fa-clock"></i>
+                                                        <span class="timeHere">
+                                                            
+                                                            05:30
+                                                            
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <h6>
+                                                    1st Round of Evaluation (Checkpoint 1)
+                                                </h6>
+
+                                                
+                                                <p>
+                                                    Idea submission from the teams will be evaluated at this checkpoint to move into the next phase of the hackathon (Prototyping Stage)
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                <div class="details-agenda">
+                                    <div class="date-section">
+                                        <div class="date-card">
+                                            <h6 class="dateHere">
+                                                
+                                                Fri Feb 02 2024 04:30:00 GMT+0000 (Coordinated Universal Time)
+                                                
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    <div class="destails-section">
+                                        <div class="details-area">
+                                            <div class="details-card">
+                                                <div class="clearfix">
+                                                    <div class="float-left time">
+                                                        <i class="fas fa-clock"></i>
+                                                        <span class="timeHere">
+                                                            
+                                                            10:00
+                                                            
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <h6>
+                                                    Initial Shortlist Announcement
+                                                </h6>
+
+                                                
+                                                <p>
+                                                    Shortlisted teams who will be moving into the prototype stage will be announced.
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                <div class="details-agenda">
+                                    <div class="date-section">
+                                        <div class="date-card">
+                                            <h6 class="dateHere">
+                                                
+                                                Fri Feb 02 2024 07:00:00 GMT+0000 (Coordinated Universal Time)
+                                                
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    <div class="destails-section">
+                                        <div class="details-area">
+                                            <div class="details-card">
+                                                <div class="clearfix">
+                                                    <div class="float-left time">
+                                                        <i class="fas fa-clock"></i>
+                                                        <span class="timeHere">
+                                                            
+                                                            12:30
+                                                            
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <h6>
+                                                    Prototype Development Starts
+                                                </h6>
+
+                                                
+                                                <p>
+                                                    Shortlisted Teams will get started to build their ideas into working solutions (MVPs)
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                <div class="details-agenda">
+                                    <div class="date-section">
+                                        <div class="date-card">
+                                            <h6 class="dateHere">
+                                                
+                                                Fri Feb 02 2024 12:00:00 GMT+0000 (Coordinated Universal Time)
+                                                
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    <div class="destails-section">
+                                        <div class="details-area">
+                                            <div class="details-card">
+                                                <div class="clearfix">
+                                                    <div class="float-left time">
+                                                        <i class="fas fa-clock"></i>
+                                                        <span class="timeHere">
+                                                            
+                                                            17:30
+                                                            
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <h6>
+                                                    Induction Session
+                                                </h6>
+
+                                                
+                                                <p>
+                                                    Quick sync-up session with teams of the prototyping stage -setting the right solution expectations &amp; submissions.
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                <div class="details-agenda">
+                                    <div class="date-section">
+                                        <div class="date-card">
+                                            <h6 class="dateHere">
+                                                
+                                                Mon Feb 05 2024 11:30:00 GMT+0000 (Coordinated Universal Time)
+                                                
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    <div class="destails-section">
+                                        <div class="details-area">
+                                            <div class="details-card">
+                                                <div class="clearfix">
+                                                    <div class="float-left time">
+                                                        <i class="fas fa-clock"></i>
+                                                        <span class="timeHere">
+                                                            
+                                                            17:00
+                                                            
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <h6>
+                                                    Mentor-Mentee Connects - Begin
+                                                </h6>
+
+                                                
+                                                <p>
+                                                    Mentor-Mentee connects starts wherein teams can sync-up with the mentors to get potential feedbacks on their solutions.
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                <div class="details-agenda">
+                                    <div class="date-section">
+                                        <div class="date-card">
+                                            <h6 class="dateHere">
+                                                
+                                                Sat Feb 17 2024 12:00:00 GMT+0000 (Coordinated Universal Time)
+                                                
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    <div class="destails-section">
+                                        <div class="details-area">
+                                            <div class="details-card">
+                                                <div class="clearfix">
+                                                    <div class="float-left time">
+                                                        <i class="fas fa-clock"></i>
+                                                        <span class="timeHere">
+                                                            
+                                                            17:30
+                                                            
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <h6>
+                                                    Mentor-Mentee Connects - Conclude
+                                                </h6>
+
+                                                
+                                                <p>
+                                                    Mentor-Mentee connects concludes.
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                <div class="details-agenda">
+                                    <div class="date-section">
+                                        <div class="date-card">
+                                            <h6 class="dateHere">
+                                                
+                                                Tue Feb 20 2024 18:29:00 GMT+0000 (Coordinated Universal Time)
+                                                
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    <div class="destails-section">
+                                        <div class="details-area">
+                                            <div class="details-card">
+                                                <div class="clearfix">
+                                                    <div class="float-left time">
+                                                        <i class="fas fa-clock"></i>
+                                                        <span class="timeHere">
+                                                            
+                                                            23:59
+                                                            
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <h6>
+                                                    Prototype Development Ends
+                                                </h6>
+
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                <div class="details-agenda">
+                                    <div class="date-section">
+                                        <div class="date-card">
+                                            <h6 class="dateHere">
+                                                
+                                                Thu Feb 22 2024 12:00:00 GMT+0000 (Coordinated Universal Time)
+                                                
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    <div class="destails-section">
+                                        <div class="details-area">
+                                            <div class="details-card">
+                                                <div class="clearfix">
+                                                    <div class="float-left time">
+                                                        <i class="fas fa-clock"></i>
+                                                        <span class="timeHere">
+                                                            
+                                                            17:30
+                                                            
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <h6>
+                                                    2nd Round of Evaluation (Checkpoint - 2)
+                                                </h6>
+
+                                                
+                                                <p>
+                                                    Prototype submissions from the teams will be evaluated at this checkpoint to move into the next phase of the hackathon (Finale)
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                <div class="details-agenda">
+                                    <div class="date-section">
+                                        <div class="date-card">
+                                            <h6 class="dateHere">
+                                                
+                                                Sun Feb 25 2024 18:30:00 GMT+0000 (Coordinated Universal Time)
+                                                
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    <div class="destails-section">
+                                        <div class="details-area">
+                                            <div class="details-card">
+                                                <div class="clearfix">
+                                                    <div class="float-left time">
+                                                        <i class="fas fa-clock"></i>
+                                                        <span class="timeHere">
+                                                            
+                                                            00:00
+                                                            
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <h6>
+                                                    Final Shortlist Announcement (TOP 10-15)
+                                                </h6>
+
+                                                
+                                                <p>
+                                                    Shortlisted teams who will be moving into the finale will be announced.
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                <div class="details-agenda">
+                                    <div class="date-section">
+                                        <div class="date-card">
+                                            <h6 class="dateHere">
+                                                
+                                                Tue Mar 05 2024 18:30:00 GMT+0000 (Coordinated Universal Time)
+                                                
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    <div class="destails-section">
+                                        <div class="details-area">
+                                            <div class="details-card">
+                                                <div class="clearfix">
+                                                    <div class="float-left time">
+                                                        <i class="fas fa-clock"></i>
+                                                        <span class="timeHere">
+                                                            
+                                                            00:00
+                                                            
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <h6>
+                                                    Grand Finale - DEMO DAY Pitching
+                                                </h6>
+
+                                                
+                                                <p>
+                                                    The final idea &amp; prototype pitching would take place in front of a grand jury at the 3rd edition of the Fintech Festival India, held at Yashobhoomi (IICC), Hall-1C, New Delhi, from 6th to 8th of March 2024.
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+
+                            <p class="text-muted">
+                                *Timeline is subject to change/tentative
+                            </p>
+
+                        </div>
+                        <hr class="my-4">
+                        
+
+                        <!-- Rewards -->
+                        
+                        <div id="prize-link" class="scroll-link"></div>
+                        <div class="container-fluid">
+                            <h3>
+                                
+                                Rewards and benefits
+                                
+                            </h3>
+
+                            <div class="row">
+                                <!-- Desktop Version -->
+                                
+
+                                
+
+                                <!-- Prize Pool Prizes -->
+                                
+                                    <!-- Mobile Verison -->
+                                    <div class="col-12">
+                                        <div class="row m-0 p-0 d-block d-sm-none">
+                                            
+                                                <div class="card w-100 p-2 my-2 hack-card">
+                                                    <p><img src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-12-21T05%3A15%3A48.665Z-prize%2091.png" width="100%"></p>
+                                                </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <!-- DESKTOP Version -->
+                                    <div class="col-12">
+                                        <div class="d-none d-sm-block prize-box mb-3">
+                                            <div class="row">
+                                                
+                                                    <div class="card w-100 p-2 m-2 hack-card">
+                                                        <p><img src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-12-21T05%3A15%3A48.665Z-prize%2091.png" width="100%"></p>
+                                                    </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                
+                                <!-- Extra Prizes Listing -->
+                                
+                                
+                                <!-- Category Prizes Listing -->
+                                
+
+                                
+                                
+                                
+                            </div>
+                        </div>
+
+</body>
+</html>
